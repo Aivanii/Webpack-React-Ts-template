@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./app/main.tsx", // Entry point for TypeScript
+  entry: "./app/main.tsx", // Entry point for TypeScript + React
   mode: "development",
   module: {
     rules: [
