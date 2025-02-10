@@ -11,10 +11,18 @@ module.exports = {
       { test: /\.svg$/, use: "svg-inline-loader" },
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
       { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }, // Add rule for .ts and .tsx files
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // CSS
+          "css-loader", // CSS in CommonJS
+          "sass-loader", // SCSS in CSS
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"], // Resolve these extensions
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".scss"],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
